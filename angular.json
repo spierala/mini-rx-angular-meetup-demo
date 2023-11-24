@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mini-rx-demo-ng-meetup-standalone:build:production"
+              "buildTarget": "mini-rx-demo-ng-meetup-standalone:build:production"
             },
             "development": {
-              "browserTarget": "mini-rx-demo-ng-meetup-standalone:build:development"
+              "buildTarget": "mini-rx-demo-ng-meetup-standalone:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mini-rx-demo-ng-meetup-standalone:build"
+            "buildTarget": "mini-rx-demo-ng-meetup-standalone:build"
           }
         },
         "test": {
