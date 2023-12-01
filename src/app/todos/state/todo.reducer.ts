@@ -9,7 +9,8 @@ const initialState: TodosState = {
 
 // Reducer
 // The reducer is added to the Store in main.ts
-export const todosReducer = reducer(initialState, on(loadTodosSuccess, (state, {payload}) => ({
-  ...state,
-  list: payload
-})));
+export const todosReducer = reducer(initialState,
+  on(loadTodosSuccess, (state, {payload}) => ({
+    ...state,
+    list: payload
+  })));
