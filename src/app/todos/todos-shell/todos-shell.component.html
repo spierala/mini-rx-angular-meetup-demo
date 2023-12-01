@@ -2,6 +2,9 @@
 
 <ul>
   @for (todo of todos(); track todo) {
-    <li>{{todo.title}}</li>
+    <li>{{todo.title}} <button (click)="deleteTodo(todo)">Delete</button></li>
+  }
+  @empty {
+    <span>There are no todos :) Enjoy your day!</span>
   }
 </ul>
