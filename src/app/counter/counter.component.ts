@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
-import { createComponentStore, createFeatureStore } from "@mini-rx/signal-store";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { createComponentStore } from "@mini-rx/signal-store";
 
 @Component({
     selector: 'app-counter',
