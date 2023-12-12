@@ -6,20 +6,20 @@ import { getProducts } from '../state';
 import { deleteProduct, loadProducts } from '../state/product.actions';
 
 @Component({
-    standalone: true,
-    imports: [CommonModule],
-    templateUrl: './product-shell.component.html',
-    styleUrl: './product-shell.component.scss',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './product-shell.component.html',
+  styleUrl: './product-shell.component.scss',
 })
 export class ProductShellComponent implements OnInit {
-    private store = inject(Store);
-    products: Signal<Product[]> = this.store.select(getProducts);
+  private store = inject(Store);
+  products: Signal<Product[]> = this.store.select(getProducts);
 
-    ngOnInit() {
-        this.store.dispatch(loadProducts());
-    }
+  ngOnInit() {
+    this.store.dispatch(loadProducts());
+  }
 
-    deleteProduct(todo: Product) {
-        this.store.dispatch(deleteProduct({ id: todo.id }));
-    }
+  deleteProduct(todo: Product) {
+    this.store.dispatch(deleteProduct({ id: todo.id }));
+  }
 }

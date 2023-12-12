@@ -5,9 +5,12 @@ import { todosReducer } from './state/product.reducer';
 import { ProductEffects } from './state/product.effects';
 
 export const productRoutes: Routes = [
-    {
-        path: '',
-        component: ProductShellComponent,
-        providers: [provideFeature('products', todosReducer), provideEffects(ProductEffects)],
-    },
+  {
+    path: '',
+    component: ProductShellComponent,
+    providers: [
+      provideFeature('products', todosReducer),
+      provideEffects(ProductEffects),
+    ],
+  },
 ];

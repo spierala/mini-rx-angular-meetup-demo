@@ -3,19 +3,19 @@ import { ComponentStore, FeatureStore } from '@mini-rx/signal-store';
 
 @Injectable()
 export class CounterStoreService extends ComponentStore<{
-    count: number;
+  count: number;
 }> {
-    counter = this.select((state) => state.count);
+  counter = this.select((state) => state.count);
 
-    constructor() {
-        super({ count: 1 });
-    }
+  constructor() {
+    super({ count: 1 });
+  }
 
-    increment() {
-        this.setState((state) => ({ count: state.count + 1 }), 'inc');
-    }
+  increment() {
+    this.setState((state) => ({ count: state.count + 1 }), 'inc');
+  }
 
-    decrement() {
-        this.setState((state) => ({ count: state.count - 1 }), 'dec');
-    }
+  decrement() {
+    this.setState((state) => ({ count: state.count - 1 }), 'dec');
+  }
 }

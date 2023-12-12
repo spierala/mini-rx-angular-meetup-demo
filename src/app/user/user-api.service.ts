@@ -3,13 +3,13 @@ import { delay, Observable, of } from 'rxjs';
 import { User } from './models';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class UserApiService {
-    getUser(): Observable<User> {
-        return of({
-            firstName: 'John',
-            lastName: 'Doe',
-        }).pipe(delay(300));
-    }
+  getUser(): Observable<User> {
+    return of({
+      firstName: 'John',
+      lastName: 'Doe',
+    }).pipe(delay(300));
+  }
 }

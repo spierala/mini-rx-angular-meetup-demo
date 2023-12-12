@@ -4,26 +4,28 @@ import { User } from './models';
 import { UserApiService } from './user-api.service';
 
 interface UserState {
-    user: User | undefined;
+  user: User | undefined;
 }
 
 const initialState: UserState = {
-    user: undefined,
+  user: undefined,
 };
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class UserStoreService extends FeatureStore<UserState> {
-    private userApi = inject(UserApiService);
+  private userApi = inject(UserApiService);
 
-    userName: Signal<string> = this.select(({ user }) =>
-        user ? user.firstName + ' ' + user.lastName : '',
-    );
+  userName: Signal<string> = this.select(({ user }) =>
+    user ? user.firstName + ' ' + user.lastName : '',
+  );
 
-    constructor() {
-        super('user', initialState);
+  constructor() {
+    super('user', initialState);
 
-        this.userApi.getUser().subscribe((user) => this.setState({ user }, 'loadUserSuccess'));
-    }
+    this.userApi
+      .getUser()
+      .subscribe((user) => this.setState({ user }, 'loadUserSuccess'));
+  }
 }
