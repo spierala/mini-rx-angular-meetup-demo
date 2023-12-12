@@ -1,0 +1,10 @@
+<h1>Products</h1>
+
+<ul>
+  @for (product of products(); track product) {
+    <li>{{product.title}} <button (click)="deleteProduct(product)">Delete</button></li>
+  }
+  @empty {
+    <span>No products available!</span>
+  }
+</ul>

@@ -1,9 +1,9 @@
 import { on, reducer } from 'ts-action';
-import { TodosState } from './index';
-import { deleteTodo, loadTodosSuccess } from './todo.actions';
+import { ProductsState } from './index';
+import { deleteProduct, loadProductsSuccess } from './product.actions';
 
 // Initial state
-const initialState: TodosState = {
+const initialState: ProductsState = {
     list: [],
 };
 
@@ -11,11 +11,11 @@ const initialState: TodosState = {
 // The reducer is added to the Store in main.ts
 export const todosReducer = reducer(
     initialState,
-    on(loadTodosSuccess, (state, { payload }) => ({
+    on(loadProductsSuccess, (state, { payload }) => ({
         ...state,
         list: payload,
     })),
-    on(deleteTodo, (state, { payload }) => ({
+    on(deleteProduct, (state, { payload }) => ({
         ...state,
         list: state.list.filter((item) => item.id !== payload.id),
     })),
