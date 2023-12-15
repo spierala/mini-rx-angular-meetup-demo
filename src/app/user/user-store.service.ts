@@ -1,5 +1,5 @@
 import { inject, Injectable, Signal } from '@angular/core';
-import { FeatureStore } from '@mini-rx/signal-store';
+import { ComponentStore, FeatureStore } from '@mini-rx/signal-store';
 import { User } from './models';
 import { UserApiService } from './user-api.service';
 
@@ -14,18 +14,20 @@ const initialState: UserState = {
 @Injectable({
   providedIn: 'root',
 })
-export class UserStoreService extends FeatureStore<UserState> {
-  private userApi = inject(UserApiService);
+export class UserStoreService extends ComponentStore<UserState> {
+  private api = inject(UserApiService);
 
   userName: Signal<string> = this.select(({ user }) =>
     user ? user.firstName + ' ' + user.lastName : '',
   );
 
   constructor() {
-    super('user', initialState);
+    super(initialState);
 
-    this.userApi
+    this.api
       .getUser()
-      .subscribe((user) => this.setState({ user }, 'loadUserSuccess'));
+      .subscribe((user) =>
+        this.setState({ user }, 'loadUserSuccess'),
+      );
   }
 }

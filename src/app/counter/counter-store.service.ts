@@ -1,21 +1,23 @@
-import { Injectable } from '@angular/core';
-import { ComponentStore, FeatureStore } from '@mini-rx/signal-store';
+import { Injectable, Signal } from '@angular/core';
+import { ComponentStore } from '@mini-rx/signal-store';
 
 @Injectable()
 export class CounterStoreService extends ComponentStore<{
   count: number;
 }> {
-  counter = this.select((state) => state.count);
+  counter: Signal<number> = this.select(
+    (state) => state.count,
+  );
 
   constructor() {
     super({ count: 1 });
   }
 
   increment() {
-    this.setState((state) => ({ count: state.count + 1 }), 'inc');
+    this.setState((state) => ({ count: state.count + 1 }));
   }
 
   decrement() {
-    this.setState((state) => ({ count: state.count - 1 }), 'dec');
+    this.setState((state) => ({ count: state.count - 1 }));
   }
 }

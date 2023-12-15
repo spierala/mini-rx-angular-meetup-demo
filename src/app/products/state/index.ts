@@ -11,7 +11,7 @@ export interface ProductsState {
 
 // Memoized selectors
 const getProductsFeature =
-  createFeatureStateSelector<ProductsState>('products');
+  createFeatureStateSelector<ProductsState>('product');
 export const getProducts = createSelector(
   getProductsFeature,
   (state) => state.list,

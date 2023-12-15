@@ -1,14 +1,18 @@
-<div class="w-100 d-flex flex-column align-items-center justify-content-center">
-  <h1 class="display-1">{{ counter() }}</h1>
+<div class="d-flex flex-column">
+  <h3 class="align-self-center">{{ counter() }}</h3>
   <div>
     <button
       type="button"
-      class="btn btn-outline-secondary mr-2"
+      class="btn btn-sm btn-outline-secondary mr-2"
       (click)="decrement()"
     >
       Less
     </button>
-    <button type="button" class="btn btn-outline-primary" (click)="increment()">
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-primary"
+      (click)="increment()"
+    >
       More
     </button>
   </div>

@@ -1,13 +1,13 @@
-@if (userName(); as userName) {
+@if (userStore.userName(); as userName) {
   <span>Welcome, {{ userName }}!</span>
 } @else {
   <span>&nbsp;</span>
 }
 
 <ul>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="products">Products</a></li>
-  <li><a routerLink="counters">Counters</a></li>
+  <li><a routerLink="">Products [Redux Store]</a></li>
+  <li><a routerLink="todos">Todos [Feature Store]</a></li>
+  <li><a routerLink="counters">Counters [Component Store]</a></li>
 </ul>
 
 <router-outlet></router-outlet>

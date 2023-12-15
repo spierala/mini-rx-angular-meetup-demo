@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@mini-rx/signal-store';
 import { Product } from '../models';
 import { getProducts } from '../state';
-import { deleteProduct, loadProducts } from '../state/product.actions';
+import {
+  deleteProduct,
+  loadProducts,
+} from '../state/product.actions';
 
 @Component({
   standalone: true,

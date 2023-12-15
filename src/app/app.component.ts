@@ -1,4 +1,4 @@
-import { Component, inject, Signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserStoreService } from './user/user-store.service';
@@ -11,7 +11,5 @@ import { UserStoreService } from './user/user-store.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  private userStore = inject(UserStoreService);
-
-  userName: Signal<string> = this.userStore.userName;
+  userStore = inject(UserStoreService);
 }

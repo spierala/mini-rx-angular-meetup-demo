@@ -1,5 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { Actions, createRxEffect, mapResponse } from '@mini-rx/signal-store';
+import {
+  Actions,
+  createRxEffect,
+  mapResponse,
+} from '@mini-rx/signal-store';
 import { ofType } from 'ts-action-operators';
 import { ProductApiService } from '../product-api.service';
 import { mergeMap } from 'rxjs';

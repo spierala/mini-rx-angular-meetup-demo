@@ -4,7 +4,12 @@
   @for (product of products(); track product) {
     <li>
       {{ product.title }}
-      <button (click)="deleteProduct(product)">Delete</button>
+      <button
+        class="btn btn-sm btn-outline-primary"
+        (click)="deleteProduct(product)"
+      >
+        Delete
+      </button>
     </li>
   } @empty {
     <span>No products available!</span>

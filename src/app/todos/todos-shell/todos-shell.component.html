@@ -1,0 +1,33 @@
+<h1>Todos</h1>
+
+<h2>Todos</h2>
+<ul>
+  @for (todo of todoStore.todosNotDone(); track todo) {
+    <li>
+      {{ todo.title }}
+      <button
+        class="btn btn-sm btn-outline-primary"
+        (click)="todoStore.toggleDone(todo)"
+      >
+        Toggle Done
+      </button>
+    </li>
+  } @empty {
+    <span>There are no todos :) Enjoy your day!</span>
+  }
+</ul>
+
+<h2>Todos DONE</h2>
+<ul>
+  @for (todo of todoStore.todosDone(); track todo) {
+    <li>
+      {{ todo.title }}
+      <button
+        class="btn btn-sm btn-outline-primary"
+        (click)="todoStore.toggleDone(todo)"
+      >
+        Toggle Done
+      </button>
+    </li>
+  }
+</ul>
